@@ -5,7 +5,7 @@ import model.Cliente;
 
 /**
  *
- * @author mariajosineidedefrei
+ * @author iagohenriquec
  */
 public class ClienteData {
     Conexao con;
