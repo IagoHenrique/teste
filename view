@@ -1,0 +1,37 @@
+# testepackage data;
+
+import java.sql.PreparedStatement;
+import model.Cliente;
+
+/**
+ *
+ * @author mariajosineidedefrei
+ */
+public class ClienteData {
+    Conexao con;
+    public boolean Incluir (Cliente objCli) throws Exception{
+        con = new Conexao();
+        String SQL = "insert into tb_custumer_account values (?,?,?,?)";
+        PreparedStatement ps = con.getConexao().prepareStatement(SQL);
+        ps.setString(1, objCli.getCpf_cnpj());
+        ps.setString(2, objCli.getNome());
+        ps.setString(3, objCli.getStatus());
+        ps.setDouble(4, objCli.getValorTotal());
+        
+        if (ps.executeUpdate() >0)
+            return true;
+         else
+            return false; 
+    }
+    
+    ///public boolean CalcMedFinal (Cliente objCli) throws Exception{
+       //con = new Conexao();
+        //String SQL = "select * from tb_custumer_account where vl_toral > 560 and  id_custumer between 1500 and 2700";
+        //PreparedStatement ps = con.getConexao().prepareStatement(SQL);
+        //ps.setString(1, objCli.getCpf_cnpj());
+        //ps.setString(2, objCli.getNome());
+        //ps.setString(3, objCli.getStatus());
+        //ps.setDouble(4, objCli.getValorTotal());
+        
+        
+    //}
